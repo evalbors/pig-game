@@ -1,21 +1,5 @@
 var scores, roundScore, activePlayer;
-scores = [0,0];
-roundScore = 0;
-activePlayer = 0;
-
-// hide dice at the beggining: changing into css property
-document.querySelector('.dice').style.display = 'none';
-
-// EVENT HANDLER
-// addEventListener('first put the event type', 'second, the funtion we need as soon this event happens -without ()-, the callback function')
-// callback, call a fun inside another fun
-// anonimus fun will be put function() { //do st here} - without name - 
-// It's perfect if ypu only use this function only once, like our dice
-
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
+init();
 
 
 // ROLL DICE
@@ -36,7 +20,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
     if (dice !== 1 ){
         roundScore += dice;
-        // in other code: roundScore = roundScore + dice;
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
     }
 });
@@ -44,7 +27,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 // HOLD SCORE
 document.querySelector('.btn-hold').addEventListener('click', function() {
     scores[activePlayer] += roundScore;
-    // in other code: score[activePlayer] = scores[activePlayer] + roundScore
 
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     
@@ -78,11 +60,21 @@ function nextPlayer() {
     document.querySelector('.dice').style.display = 'none';
 }
 
+// HOLD SCORE
+document.querySelector('.btn-new').addEventListener('click', function() {
+    init() 
+});
 
-// SETTER
-// document.querySelector('#current-' + activePlayer).textContent = dice;
-// document.querySelector('#current-' + activePlayer).innerHTML = '<strong>' + dice + '</strong>';
+function init() {
+    scores = [0,0];
+    activePlayer = 0;
+    roundScore = 0;
 
-// GETTER
-// var x = document.querySelector('#score-0').textContent;
-// console.log(x);
+    document.querySelector('.dice').style.display = 'none';
+
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+}
+
