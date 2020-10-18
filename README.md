@@ -9,7 +9,8 @@ PIG GAME RULES
 
 Tutorial by Jonas Schmedtmann
 https://github.com/jonasschmedtmann
-- thanks!! ;) -
+
+Thanks!! ;)
 
 
 
