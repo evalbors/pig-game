@@ -1,7 +1,3 @@
-#pig-game
-
-
-
 PIG GAME RULES
 
 - The game has 2 playes, playing in rounds.
