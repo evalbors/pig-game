@@ -49,13 +49,22 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     
     // check if score => 100
-
-    nextPlayer();
+    if (scores[activePlayer] >= 20) {
+        document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+        document.querySelector('.dice').style.display = 'none';
+    }
+    
+    if (scores[activePlayer] < 20) {
+        nextPlayer();
+    }
+    
 });
  
 function nextPlayer() {
-    roundScore = 0;
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    roundScore = 0;
 
     // current score into red square
     document.getElementById('current-0').textContent ='0';
