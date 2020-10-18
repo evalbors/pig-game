@@ -1,6 +1,6 @@
 #pig-game
 
-<!--
+
 
 PIG GAME RULES
 
@@ -16,6 +16,5 @@ https://github.com/jonasschmedtmann
 - thanks!! ;) -
 
 
--->
 
 
