@@ -31,7 +31,6 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     // 3. updte the round score if the rolled number is not a 1
 
     if (dice == 1 ){
-        roundScore = 0;
         nextPlayer();
     }
 
@@ -55,18 +54,19 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 });
  
 function nextPlayer() {
+    roundScore = 0;
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
 
-        // current score into red square
-        document.getElementById('current-0').textContent ='0';
-        document.getElementById('current-1').textContent ='0';
+    // current score into red square
+    document.getElementById('current-0').textContent ='0';
+    document.getElementById('current-1').textContent ='0';
 
-        // move active state in the another player - VERSION 2 -
-        document.querySelector('.player-0-panel').classList.toggle('active');
-        document.querySelector('.player-1-panel').classList.toggle('active');
+    // move active state in the another player - VERSION 2 -
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
 
-        // hide the dice
-        document.querySelector('.dice').style.display = 'none';
+    // hide the dice
+    document.querySelector('.dice').style.display = 'none';
 }
 
 
